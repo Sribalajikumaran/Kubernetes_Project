@@ -1,6 +1,6 @@
 FROM centos:latest
 LABEL Name="sribalaji4535@gmail.com"
-
+RUN sed -i '/appstream/s/enabled=1/enabled=0/' /etc/yum.repos.d/CentOS-*.repo
 RUN yum install -y httpd zip unzip && \
     yum clean all
 
@@ -11,4 +11,4 @@ RUN unzip photogenic.zip && \
     rm -rf photogenic photogenic.zip
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80 22
+EXPOSE 80
