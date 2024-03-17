@@ -1,0 +1,16 @@
+kind: Deployment
+apiVersion: v1
+metadata:
+  name: sribalajikumaran
+  labels:
+    app: sribalajikumaran
+spec:
+  selector:
+    matchLabels:
+      app: sribalajikumaran
+  ports:
+    - port: 8080
+      targetPort: 80
+      nodePort: 31200
+type: LoadBalancer
+

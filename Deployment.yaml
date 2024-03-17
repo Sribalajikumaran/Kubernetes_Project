@@ -1,0 +1,22 @@
+kind: Deployment
+apiversion: apps/v1
+metadata:
+  name: sribalajikumaran
+spec:
+  replicas: 2
+  selector:
+    matchLAbels:
+      app: sribalajikumaran
+    template:
+      metadata:
+        labels:
+          app: sribalajikumaran
+      spec:
+        container:
+        - name: sribalajikumaran
+          image: sribalajikumaran/demo-pipeline
+          imagepullpolicy: Always
+          ports:
+          - containerPort: 80
+~
+

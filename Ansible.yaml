@@ -1,0 +1,8 @@
+- hosts: all
+  become: true  # Added a space between 'become' and 'true'
+  tasks:
+    - name: create a new deployment
+      command: kubectl apply -f /home/ubuntu/Deployment.yaml
+    - name: create a new service
+      command: kubectl apply -f /home/ubuntu/Service.yaml
+
