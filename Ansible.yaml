@@ -1,6 +1,10 @@
 - hosts: all
   become: true  # Added a space between 'become' and 'true'
   tasks:
+    - name: deleting a old deployment
+      command: kubectl delete -f /home/ubuntu/Deployment.yaml
+    - name: deleteing a old service
+      command: kubectl delete -f /home/ubuntu/Service.yaml
     - name: create a new deployment
       command: kubectl apply -f /home/ubuntu/Deployment.yaml
     - name: create a new service
